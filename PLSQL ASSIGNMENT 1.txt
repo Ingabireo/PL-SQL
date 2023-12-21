@@ -1,0 +1,59 @@
+PL/SQL ASSIGNMENT #1: https://classroom.google.com/c/NjI1MTY3MjA0NDMw?cjc=hdnv75z
+--------------------------------------------------------------------------------
+
+INSTRUCTIONS
+	1. The assignment deadline: 26/September/2023 at 5:59PM
+	2. To be submitted on using the google classroom with code: hdnv75z 
+	3. The codes used to respond to each question must be provided.
+	4. A screenshot with the O/P of every program must be attached on each question
+	5. Assignment MUST be submitted in pdf format.
+	6. Late submissions will not be accepted at any cost or excuse
+	7. File name must be named this way: YourStudentCode_YourFullName_YourDayOfStudy
+
+SECTION A : Control structures
+-------------------------------
+
+1. Write a PLSQL program to illustrate the use of nested programs
+2. Write a PLSQL program that raises an exception when the provided input is a character or a digit
+For characters, the exception should be char_detected_exception and for digits num_detected_exception.
+3. Write a PLSQL program that illustrates the zero devide exception and how to catch it
+4. Write a PLSQL program that illustrates the row type mismatch exception and how to catch it
+5. Write a PLSQL program to illustrate the too many rows exception and how to catch it.
+
+
+SECTION B : Variable attributes + Control Structures 
+----------------------------------------------------
+
+1. Use the table created in this question to respond to questions from question 2 to 5.
+Create a table called employees with these columns and data: emp_code(integer) emp_first_name (varchar) emp_last_name (varchar) salary (float) 
+
+1 Louis 	Vuiton 		4500.25
+2 Anne 		Franck 		3750.75
+3 Bruce 	Wayne 		6000.57
+4 Eric		Tony		2456.87
+5 Lionel 	Manzi		7500.25
+6 Denise 	Cyuzuzo		1750.75
+7 Jeanne	Kaliza 		4000.57
+8 Blaise	Mucyo		5456.27
+9 Arsene        Butera 		6046.35
+10 Jordan	Karangwa	2456.87	
+
+2. Write a PLSQL program that checks whether the salary of provided employee code is below the average of all the salaries in the employee table. If the salary is below the average, 
+an exception should be raised mentioning that employee salary is below average salary.
+
+3. Write a PLSQL program that reduces the salary of an employee by 5% if the provided employee has a salary that is greater than the average of all employees’ salaries. If the salary is not above the average,
+an exception should be raised mentioning that the employee’s salary is within the normal range.
+
+4. Write a PL/SQL program that prompts for an employee's code and checks whether an employee's salary range is not between $2500 and $5000. If the salary is in the specified range, the program should 
+raise an exception saying that the salary is out of range. Otherwise, the program should print the message 'The bonus should be added'. Make sure that the program handles all possible exceptions.
+
+5. Write a PLSQL program that prompts for an employee code to print details of the employee whose code has been provided by the user. Here is a sample O/P
+
+Employee code: E006
+Employee Name: Denise Cyuzuzo
+Employee Sal: USD 1750.75
+The employee additional bonus is 1.5% of their actual salary
+Employee Bonus: USD 26.26
+
+
+	

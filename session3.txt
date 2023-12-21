@@ -1,0 +1,79 @@
+DECLARE
+    e_empcode employee.emp_code%TYPE := &emp_code;
+    e_first_name employee.emp_first_name%TYPE;
+    ty_exception EXCEPTION;
+BEGIN
+    SELECT emp_first_name INTO e_first_name 
+FROM employee WHERE emp_code=e_empcode;
+    
+IF e_first_name IS NULL THEN
+        raise NO_DATA_FOUND;
+
+ELSIF e_first_name ='Ty' THEN
+	 raise ty_exception;
+ELSE   
+        dbms_output.put_line ('The employee exists!');
+    END IF;
+
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        dbms_output.put_line('The employee does not exist');
+ WHEN ty_exception THEN
+	dbms_output.put_line(e_first_name ||'is Blacklisted');
+END;
+
+
+
+DECLARE
+    v_out varchar(50);
+    v_num number:=8;
+    v_name varchar(100):='XYZ';
+BEGIN
+    IF v_num = 2 THEN
+        NULL;
+    ELSIF v_num = 8 THEN
+        v_out := 'The value: '||v_num;
+        dbms_output.put_line(v_out);
+ELSE
+        dbms_output.put_line
+('This is the default print');
+    END IF;
+    IF v_name = '123' THEN
+        NULL;
+    ELSIF v_name = 'XYZ' THEN
+        dbms_output.put_line(v_name);
+    ELSE
+        dbms_output.put_line
+('This is the default print');
+    END IF;
+END;
+
+SET SERVEROUTPUT ON;
+1. Write a program that dispalys the below O/P:
+	Huguette is 40 Years Old
+	She was born in 1983
+
+2. Write a program that assigns bonus to employees
+depending on their salaries. 
+$200 for a salary less or equal to $5000
+$300 for a salary between $5000 and $7500
+$400 for a salary greater or equal to $10000
+
+3. Write a program that prints the below O/P:
+
+The sum of 5+5 = 10
+The multiplication of  5*5 = 25
+The substraction of 5-5=0
+The division of 5/5=1
+
+
+
+
+
+
+
+
+
+
+
+

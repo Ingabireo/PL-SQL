@@ -1,0 +1,50 @@
+1. Write program that prints all the first names of the employee table using a cursor
+--------------------------------------------------------------------------------------
+2. Write program that prints all the employee details using a for loop cursor
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3. Write program that prints all the employee details using an explicit cursor
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4. Write a program that updates salaries of all the employees whose salary is less than 2000 with a 10% of their actual salary using an explicit cursor. The cursor should print 
+the number of rows that have been updates
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. What statement should be removed from the following block?
+
+DECLARE 
+CURSOR emp_cur IS SELECT * FROM employee; 
+emp_rec emp_cur%ROWTYPE; 
+BEGIN 
+FOR emp_rec IN emp_cur 
+LOOP give_raise (emp_rec.empno); 
+END LOOP; 
+END;
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6. What cursor-related statements are missing from the following block?
+
+DECLARE 
+CURSOR emp_cur IS SELECT * FROM employee; 
+BEGIN 
+OPEN emp_cur; 
+FETCH emp_cur INTO emp_rec; 
+END;
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+7. How would you change the SELECT statement in the following block's cursor so that the block can display the sum of salaries in each department?
+
+DECLARE 
+CURSOR tot_cur IS SELECT EMP_DEPARTMENT, SUM (EMP_SALARY) FROM employee GROUP BY EMP_DEPARTMENT; 
+BEGIN FOR tot_rec IN tot_cur 
+LOOP 
+DBMS_OUTPUT.PUT_LINE ('Total is: ' || tot_rec.EMP_DEPARTMENT); 
+END LOOP; 
+END;
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+8. What statement would you remove from this block? Why?
+
+DECLARE 
+CURSOR emp_cur IS SELECT EMP_CODE,EMP_FIRST_NAME, EMP_LAST_NAME, EMP_DEPARTMENT FROM employee WHERE EMP_SALARY < 2500;
+emp_rec emp_cur%ROWTYPE; 
+BEGIN 
+FOR emp_rec IN emp_cur 
+LOOP give_raise (emp_rec.EMP_CODE, 1); 
+END LOOP; 
+END;
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

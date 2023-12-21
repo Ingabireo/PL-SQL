@@ -1,0 +1,109 @@
+USEFUL LINKS:
+	https://www.oracletutorial.com/plsql-tutorial/plsql-for-loop/
+	https://www.oracletutorial.com/plsql-tutorial/plsql-cursor-for-loop/
+	https://www.educba.com/plsql-while-loop/
+
+
+-- TO set the console display size to maximum: SET LINESIZE 32767;
+-- TO display the command output on the console/termina: SET SERVEROUTPUT ON;
+--------------------------------------------------------------------------------------------------------------------------
+--Sample data to use in class exercises
+
+CREATE TABLE EMPLOYEE (
+emp_code integer UNIQUE,
+emp_first_name varchar (50),
+emp_last_name varchar (50),
+emp_department integer,
+emp_salary float,
+emp_address varchar (50),
+emp_account integer);
+
+INSERT INTO EMPLOYEE VALUES(1,'Tom', 'Cat', 1,4502.34,'Kigali',3);
+INSERT INTO EMPLOYEE VALUES(2,'John', 'Wick', 2,4365.45,'Entebbe',2);
+INSERT INTO EMPLOYEE VALUES(3,'Sarah', 'Connor', 3,4599.10,'Masisi',1);
+INSERT INTO EMPLOYEE VALUES(4,'Sheldon', 'Cooper', 1,2348.20,'Mbarara',2);
+INSERT INTO EMPLOYEE VALUES(5,'Bill', 'Cosby', 2,4500,'Butare',3);
+INSERT INTO EMPLOYEE VALUES(6,'Rich', 'Cipher', 3,4898.50,'Dakar',1);
+INSERT INTO EMPLOYEE VALUES(7,'Elsie', 'Belle', 1,345.05,'Cairo',3);
+INSERT INTO EMPLOYEE VALUES(8,'Harriet', 'Tubman', 2,657.50,'Addis',2);
+INSERT INTO EMPLOYEE VALUES(9,'Anna', 'Frank', 3,400.50,'Niamey',1);
+INSERT INTO EMPLOYEE VALUES(10,'Ong', 'Back', 4,345,'Dubai',3);
+INSERT INTO EMPLOYEE VALUES(11,'Jet', 'Li', 5,980,'Kinshasa',2);
+
+CREATE TABLE DEPARTMENT(
+depart_no integer UNIQUE,
+depart_name varchar (50));
+
+INSERT INTO DEPARTMENT VALUES(1, 'Finance');
+INSERT INTO DEPARTMENT VALUES(2, 'Human Resource');
+INSERT INTO DEPARTMENT VALUES (3,'Legal');
+INSERT INTO DEPARTMENT VALUES (4,'IT');
+INSERT INTO DEPARTMENT VALUES (5,'Support');
+
+CREATE TABLE ACCOUNT(
+account_no integer UNIQUE,
+account_name varchar (50));
+
+INSERT INTO ACCOUNT VALUES(1, 'Savings');
+INSERT INTO ACCOUNT VALUES(2, 'Expenses');
+INSERT INTO ACCOUNT VALUES (3,'Revenues');
+
+ALTER TABLE EMPLOYEE ADD FOREIGN KEY (emp_account) REFERENCES ACCOUNT(account_no);
+ALTER TABLE EMPLOYEE ADD FOREIGN KEY (emp_department) REFERENCES DEPARTMENT(depart_no);
+
+
+QUESTIONS:
+
+1. Program that adds a bonus of 100 to the employee salary if the salary is greater than 200
+2. Using nested IF THEN, write a program that checks if the employee code is greater or equal to 15.
+3. A program that checks for the last large number added in the account table and compares it with the user input account number
+If they don't match, an error message is raised.
+4. A program that check if a certain employee already exists
+5. A program that checks if the last employee name matches the user input first name, if true,print the full employee info, 
+raise -20001-First and Last name do not match! exception.
+6. A program that checks if an employee can get a loan based. If the requested amount is greater than
+the actual employee sal times 12, they are not allowed to get a loan
+7. Using CASE statement, write a PLSQL program that checks for an employee's account number. 
+Based on the returned account number, the program should print the name of that account as per account table. 
+8. Using searched CASE statement, write a PLSQL program that declares a variable of type employee table to store the record of an employee
+whose code equals to the user inputcode. If the code does not exist in the employee table, the prgram should raise an exception, else
+the program should use a searched case statement to check whether the passed employee code equals to one of the employee codes stored
+in declared employee variable. When there is a match, the program should print the full name (first and last names) corresponding to 
+that employee code.
+9. Using Nested CASE STATEMENT, Write a PLSQL program that declares a variable called salary of type number. Initialize the salary with some value
+For all values of salary less or equal to 10000,
+the program should check whether they fall into the specified range and give bonus based on condition 1,2 and 3
+	1. The bonus should be 1000 when the salary is less or equal to 2000
+	2. The bonus should be 1500 when the salary is between  2000 and 6000
+	3. The bonus should be 2000 when the salary is greater than 6000
+	For other salaries the program should give a bonus of 200
+10. Modify the codes in program 9 to update the employee salary with the new salary after adding a bonus. The program should print a message that displays the employee code
+and the new salary after adding bonus. 
+11. Using the case expression, write a program that prompts for an employee code to return the employee's account. Based on the returned value, the program should read from
+the account table and return the name associated with the account number.When the user input a non existent employee code,the program should raise an exception.
+
+12.Write a program that prints the multiplication table of 8. The O/P should have this format
+8 * 1 =8
+8 * 2 =16
+.
+.
+8 * 10=80
+
+13. Write a program that prints this O/P
+*
+**
+***
+*****
+******
+14. Write a program that prints this O/P
+*****
+****
+***
+**
+*
+15. Write a program that prints this O/P
+*****
+ ****
+  ***
+   **
+    *
